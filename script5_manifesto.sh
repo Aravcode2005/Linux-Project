@@ -1,0 +1,38 @@
+
+
+echo "======================================"
+echo "  Open Source Manifesto Generator"
+echo "======================================"
+echo ""
+echo "Answer 3 quick questions to create your manifesto."
+echo ""
+read -p "1. Name one open-source tool you use every day: " TOOL
+read -p "2. In one word, what does freedom mean to you?  " FREEDOM
+read -p "3. Name one thing you would build and share freely: " BUILD
+DATE=$(date '+%d %B %Y')
+OUTPUT="manifesto_$(whoami).txt"
+echo ""
+echo "Generating your manifesto..."
+echo ""
+echo "===== My Open Source Manifesto =====" > "$OUTPUT"
+echo "Generated on: $DATE" >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+echo "I use $TOOL every single day, and the reason it exists is because" >> "$OUTPUT"
+echo "someone chose to share their work instead of locking it away." >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+echo "To me, freedom means $FREEDOM. Open source software is probably" >> "$OUTPUT"
+echo "the best real-world example of that kind of freedom." >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+echo "One day I want to build $BUILD and put it out there for anyone" >> "$OUTPUT"
+echo "to use, modify, or improve. That is the whole idea - you take" >> "$OUTPUT"
+echo "what the community gave you and you give something back." >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+echo "Software should belong to people, not just companies." >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+echo "Signed: $(whoami)" >> "$OUTPUT"
+echo "=====================================" >> "$OUTPUT"
+echo "Manifesto saved to: $OUTPUT"
+echo ""
+cat "$OUTPUT"
+echo ""
+echo "======================================"
